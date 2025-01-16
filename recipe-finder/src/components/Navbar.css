@@ -1,0 +1,81 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #333;
+  color: white;
+}
+
+.navbar-logo {
+  flex: 1;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center; /* Align items vertically centered */
+}
+
+.navbar-logo img {
+  width: 40px; /* Set width of the image */
+  height: 40px; /* Set height of the image */
+  margin-right: 10px; /* Add space between the logo image and text */
+}
+
+.navbar-logo h1 {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.navbar-links {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex: 2;
+}
+
+.navbar-links li {
+  list-style-type: none;
+}
+
+.navbar-links li a {
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: color 0.3s ease;
+}
+
+.navbar-links li a:hover {
+  color: #f39c12;
+}
+
+.navbar-search {
+  display: none;
+}
+
+/* Optional: Add some padding or background color to active links */
+.navbar-links li .active {
+  color: #f39c12;
+}
+/* Navbar.css */
+
+/* Style for login and signup links */
+/* Navbar.css */
+
+/* Style for login and signup links */
+.login-signup-link {
+  margin-left: 20px;
+  font-weight: bold;
+  color: #007bff;
+}
+
+.login-signup-link .icon {
+  margin-right: 8px; /* Space between icon and text */
+}
+
+.login-signup-link:hover {
+  color: #0056b3;
+  text-decoration: underline;
+}
