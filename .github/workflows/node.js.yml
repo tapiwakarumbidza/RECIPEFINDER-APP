@@ -1,0 +1,33 @@
+
+This GitHub Actions workflow is set up for continuous integration (CI) to automatically test your Node.js project across different versions of Node.js. Here's a breakdown of each part of the workflow:
+
+Workflow Name
+Node.js CI: This is the name of the workflow.
+Trigger
+push: This triggers the workflow on pushes to the main branch.
+pull_request: This triggers the workflow on pull requests targeting the main branch.
+Jobs
+The workflow defines a build job with the following setup:
+
+runs-on: ubuntu-latest
+This specifies that the job should run on the latest available Ubuntu virtual environment.
+Matrix Strategy
+node-version: The workflow runs the job across different Node.js versions specified in the matrix (18.x, 20.x, and 22.x). This ensures compatibility with multiple Node.js versions.
+The Node.js release schedule can be checked at: Node.js Release Schedule.
+Steps
+Checkout code:
+
+actions/checkout@v4: This action checks out the code from your repository so the workflow can work with it.
+Set up Node.js:
+
+actions/setup-node@v4: This sets up the Node.js environment for the specified version in the matrix (node-version: ${{ matrix.node-version }}) and enables caching for npm to speed up subsequent runs.
+cache: 'npm': This caches the npm dependencies, which helps to avoid downloading the same dependencies on every run.
+Install dependencies:
+
+npm ci: This command installs the project dependencies using package-lock.json, ensuring a clean and consistent installation across environments.
+Build the project:
+
+npm run build --if-present: This runs the build script (if defined in your package.json). If there's no build script, this step will be skipped.
+Run tests:
+
+npm test: This runs your test suite, typically using a test runner like Jest, Mocha, or similar.
